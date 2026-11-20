@@ -1,0 +1,41 @@
+{
+  "name": "magpie-deepseek-buff",
+  "version": "1.0.0",
+  "description": "Give every DeepSeek turn behind magpie the six things DeepSeek needs: batched steps, a leading think block kept out of the reply's text, tool-call JSON repaired, reasoning effort raised from medium to high, group members decided per try, and history trimmed only when asked",
+  "type": "module",
+  "files": [
+    "deepseek-buff.middleware.js",
+    "lib",
+    "README.md",
+    "LICENSE"
+  ],
+  "keywords": [
+    "magpie",
+    "magpie-middleware",
+    "deepseek",
+    "reasoning",
+    "tool-calls",
+    "llm-gateway"
+  ],
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/van90bg/magpie-deepseek-buff.git"
+  },
+  "scripts": {
+    "test": "node --test test/*.test.mjs"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "magpie": {
+    "middleware": "./deepseek-buff.middleware.js",
+    "options": {
+      "batching": true,
+      "heightenReasoning": true,
+      "repairHistory": true,
+      "stripReplyThink": true,
+      "trimToTokens": 0
+    }
+  }
+}
